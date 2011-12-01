@@ -16,7 +16,7 @@ public class Jams
     public Jams() {
         try {
             // From file
-            sequence = MidiSystem.getSequence(new File("/Users/Dan/desktop/tunes.mid"));
+            sequence = MidiSystem.getSequence(new File("/Users/Dan/desktop/images/tunes.mid"));
             // Create a sequencer for the sequence
             sequencer = MidiSystem.getSequencer();
             sequencer.open();

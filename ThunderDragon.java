@@ -11,23 +11,26 @@ public class ThunderDragon
             
         game.pack();
         game.setSize(530, 480);
-        game.setVisible(true);
         game.getContentPane().add(playersWin);
+        game.setVisible(true);
+
         while (!playersWin.getDone()) {}
         for (int i = 0; i < 4; i++) {
             names[i] = playersWin.getText(i);
             if (names[i].equals(""))
                 numPlayers--;
         }
-        
-        //Jams jams = new Jams();
-        //jams.play();
-        
-        game.getContentPane().remove(playersWin);
+        game.dispose();
+
+        System.out.println(names[0]);
+        game = new GameLayout("THUNDER DRAGON!");
+        Jams jams = new Jams();
+        jams.play();
         game.setMap();
         game.setBar(names, numPlayers);
         game.pack();
-        game.setSize(1000, 598);
-        game.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        game.setSize(1000, 615);
+        game.setVisible(true);
+
     }
 }

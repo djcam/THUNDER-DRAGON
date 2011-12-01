@@ -36,7 +36,7 @@ public class InputFrame extends Panel
         JPanel master = new JPanel(new BorderLayout());
         JPanel topPan = new JPanel(new BorderLayout());
         JLayeredPane midPane = new JLayeredPane();
-        JLabel imagePan = new JLabel(new ImageIcon("/Users/Dan/desktop/scroll.png"));
+        JLabel imagePan = new JLabel(new ImageIcon("/Users/Dan/desktop/images/scroll.png"));
         JPanel botPan = new JPanel(new FlowLayout());
         
         inLabel = "   "+inLabel;
@@ -45,7 +45,7 @@ public class InputFrame extends Panel
         
         imagePan.setBounds(0, 0, 500, 400);
         midPane.add(imagePan, new Integer(0), 0);
-        label = new JLabel(new ImageIcon("/Users/Dan/desktop/enterplayer.png"));
+        label = new JLabel(new ImageIcon("/Users/Dan/desktop/images/enterplayer.png"));
         label.setBounds(140, 60, 220, 30);
         text1 = new JTextField(20);
         text1.setBounds(105, 115, 300, 25);
