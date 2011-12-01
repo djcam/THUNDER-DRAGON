@@ -36,7 +36,7 @@ public class GameLayout extends JFrame
     }
     
     public void setMap() {
-        map = new JLabel(new ImageIcon("/Users/Dan/desktop/images/map.png"));
+        map = new JLabel(new ImageIcon("images/map.png"));
         JPanel theMap = new JPanel(new FlowLayout());
         theMap.add(map);
         subMaster.add(theMap, BorderLayout.CENTER);
@@ -45,29 +45,30 @@ public class GameLayout extends JFrame
     public void setBar(String [] names, int num) {
         men = new JLayeredPane[num];
         menNames = new JLabel[num];
-        int height = 300/num;
-        
-        bar = new JPanel(new BorderLayout());
+        int height = 600/num;
+                
+        bar = new JPanel(new FlowLayout());
         bar.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         
-        dice = new JPanel(new FlowLayout());
         players = new JPanel(new GridLayout(num, 1));
         
         for (int i = 0; i < num; i++) {
             men[i] = new JLayeredPane();
+            
             menNames[i] = new JLabel(names[i], SwingConstants.LEFT);
-            menNames[i].setBounds(0, 0, 250, 10);
-            men[i].add(menNames[i], new Integer(i), 0);
-            men[i].setSize(250, height);
-            men[i].setVisible(true);
+            menNames[i].setBounds(0, 0, 250, 20);
+            
+            JLabel bg = new JLabel(new ImageIcon("images/parchbg.jpg"));
+            bg.setBounds(0, 0, 250, height);
+            
+            men[i].add(bg, new Integer(0), 0);
+            men[i].add(menNames[i], new Integer(1), 0);
+            
             men[i].validate();
+            men[i].setVisible(true);
             players.add(men[i]);
         }
-        
-        JLabel diceLabel = new JLabel("Dice", SwingConstants.LEFT);
-        dice.add(diceLabel);
-        
-        bar.add(dice, BorderLayout.NORTH);
+
         bar.add(players, BorderLayout.CENTER);
         subMaster.add(bar, BorderLayout.EAST);
        }
